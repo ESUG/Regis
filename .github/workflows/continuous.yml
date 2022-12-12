@@ -31,7 +31,10 @@ jobs:
           sudo apt-get update
           sudo apt-get -y install google-chrome-stable
       - name: Install selenium
-        run: npm install selenium-standalone && npx selenium-standalone install && npx selenium-standalone start &
+        run: |
+          npm install selenium-standalone
+          npx selenium-standalone install
+          npx selenium-standalone start &
       - name: Run tests
         run: smalltalkci -s ${{ matrix.smalltalk }}
         shell: bash
