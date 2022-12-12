@@ -33,7 +33,7 @@ jobs:
       - name: Install selenium
         run: |
           npm install selenium-standalone
-          npx selenium-standalone install --singleDriverInstall=chrome
+          npx selenium-standalone install
           npx selenium-standalone start &
       - name: Run tests
         run: smalltalkci -s ${{ matrix.smalltalk }}
