@@ -15,6 +15,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      selenium:
+        image: selenium/standalone-chrome:latest
+        ports: 
+          - 4444:4444
+        options: --shm-size="2g"
     strategy:
       matrix:
         smalltalk: [ Pharo64-10 ]
@@ -24,17 +30,6 @@ jobs:
       - uses: hpi-swa/setup-smalltalkCI@v1
         with:
           smalltalk-version: ${{ matrix.smalltalk }}
-      - name: Install Chrome
-        run: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-          sudo apt-get update
-          sudo apt-get -y install google-chrome-stable
-      - name: Install selenium
-        run: |
-          npm install selenium-standalone
-          npx selenium-standalone install
-          npx selenium-standalone start &
       - name: Run tests
         run: smalltalkci -s ${{ matrix.smalltalk }}
         shell: bash
