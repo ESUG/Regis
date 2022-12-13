@@ -79,7 +79,6 @@ ERParasolTest >> selectElementWithID: aString1 send: aString2 [
 ERParasolTest >> setUp [
 
 	super setUp.
-	BPRemoteWebDriver serverHost: 'selenium'.
 	driver := BPRemoteWebDriver withCapabilities: BPChromeOptions new.
 	driver get: self baseURL
 ]
