@@ -660,7 +660,7 @@ ERConference >> paymentToString: aBoolean [
 ERConference >> priceAccordingToAttendanceDaysOf: anAttendee [
 	|daysOfAssistance |
 	daysOfAssistance := anAttendee daysOfAssistance.
-	(daysOfAssistance < 5) ifTrue: 
+	(daysOfAssistance < 4) ifTrue: 
 		[ ^ self priceForNDays: daysOfAssistance of: anAttendee ].
 	^ self priceForAllDaysOf: anAttendee
 	

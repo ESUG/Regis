@@ -108,7 +108,7 @@ ERRegisterConferenceInformation >> classId: anId [
 ERRegisterConferenceInformation >> daysOfAssistance [
 	| aString |
 	aString := ''.
-	#(#monday #tuesday #wednesday #thursday #friday)
+	#(#monday #tuesday #wednesday #thursday "#friday")
 		do: [ :each | 
 			(self perform: each)
 				ifTrue: [ aString isEmpty
@@ -212,8 +212,8 @@ ERRegisterConferenceInformation >> descriptionFoodPreferenceOfExtraPerson [
 
 { #category : #'magrittes-descriptions' }
 ERRegisterConferenceInformation >> descriptionFriday [
-	<magritteDescription>
-	| tmp2 |
+"	<magritteDescription>
+"	| tmp2 |
 	tmp2 := MABooleanDescription new.
 	tmp2 
 		checkboxLabel: 'Friday';
