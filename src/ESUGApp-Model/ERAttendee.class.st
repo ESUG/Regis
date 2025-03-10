@@ -75,8 +75,8 @@ ERAttendee >> convertToStudentVolunter [
 { #category : #accessing }
 ERAttendee >> daysOfAssistance [
 
-	"We set the friday to false, as there is no friday. This is a problem when there are registers already generated"
-	self conferenceInformation attendance at: #friday put: false.
+	"We set the monday to false, as there is no monday. This is a problem when there are registers already generated"
+	self conferenceInformation attendance at: #monday put: false.
 	^ self conferenceInformation attendance values count: [ :each | each ]
 ]
 

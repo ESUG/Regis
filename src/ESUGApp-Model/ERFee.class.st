@@ -74,7 +74,7 @@ ERFee >> descriptionBankPayPalUrl [
 		accessor: #bankPayPalUrl; 
 		priority: 70;
 		beRequired;
-		label: 'PayPal URL (Required)';
+		label: 'Credit Card URL (Required)';
 		withoutLabel: true;
 		id: 'bankPayPalUrl';
 		componentClass: MDLMATextInputComponent.
@@ -206,7 +206,7 @@ ERFee >> descriptionPayPalCommissionPercentage [
 		accessor: #payPalCommissionPercentage; 
 		priority: 80;
 		beRequired;
-		label: 'Paypal Commission Percentage (Required)';
+		label: 'Credit Card Commission Percentage (Required)';
 		addCondition: [ :value | value >= 0 ]
   		labelled: 'Need to be a positive number';
 		withoutLabel: true;
@@ -242,7 +242,7 @@ ERFee >> descriptionStaticPayPalCommission [
 		accessor: #staticCommissionPaypal; 
 		priority: 90;
 		beRequired;
-		label: 'Static Commission Paypal (Required)';
+		label: 'Static Commission Credit Card (Required)';
 		addCondition: [ :value | value >= 0 ]
   		labelled: 'Need to be a positive number';
 		withoutLabel: true;

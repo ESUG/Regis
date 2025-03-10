@@ -108,7 +108,7 @@ ERRegisterConferenceInformation >> classId: anId [
 ERRegisterConferenceInformation >> daysOfAssistance [
 	| aString |
 	aString := ''.
-	#(#monday #tuesday #wednesday #thursday "#friday")
+	#("#monday" #tuesday #wednesday #thursday #friday)
 		do: [ :each | 
 			(self perform: each)
 				ifTrue: [ aString isEmpty

@@ -253,29 +253,29 @@ ERPDFInvoice >> addInfoPayment: pdfPage of: user [
 		textColor: self colorTitle;
 		font: self fontBoldContent;
 		from: 20 mm @ 178 mm;
-		text: 'Pay by Credit Card or Paypal:');
+		text: 'Pay by Credit Card');
 	add: (PDFTextElement new
 		font: self fontContent;
 		from: 30 mm @ 183 mm;
-		text: 'Pay to our Paypal account');
+		text: 'Pay to our HelloAsso account: ESUG');
 	add: (PDFTextElement new
 		textColor: self colorLink;
 		font: self fontContent;
-		from: 80 mm @ 183 mm;
-		text: 'board@esug.org');
+		from: 30 mm @ 188 mm;
+		text: 'https://www.helloasso.com/associations/esug/paiements/esug-2025');
 	add: (PDFTextElement new
 		font: self fontContent;
-		from: 30 mm @ 188 mm;
+		from: 30 mm @ 193 mm;
 		text: 'More infos: ');
 	add: (PDFTextElement new
 		textColor: self colorLink;
 		font: self fontContent;
-		from: 55 mm @ 188 mm;
-		text: 'http://www.esug.org/wiki/pier/About/SupportESUG');
+		from: 55 mm @ 193 mm;
+		text: 'https://esug.org/support_esug.html');
 	add: (PDFTextElement new
 		textColor: self colorTitle;
 		font: self fontBoldContent;
-		from: 20 mm @ 196 mm;
+		from: 20 mm @ 201 mm;
 		text: 'Pay by Bank Transfer:');
 	add: (PDFDataTableElement new
 		data: (Array with: (
@@ -285,18 +285,18 @@ ERPDFInvoice >> addInfoPayment: pdfPage of: user [
 			(Array with: 'BIC/SWIFT Code:' with: controller conference fee bankAccountInformation bankInformation bic)
 		);
 		font: self fontContent;
-		from: 30 mm @ 202 mm;
+		from: 30 mm @ 207 mm;
 		dimension: 160 mm @ 20 mm;
 		style: #noBorder; yourself
 	);
 	add: (PDFTextElement new
 		textColor: self colorTitle;
 		font: self fontBoldContent;
-		from: 20 mm @ 225 mm;
+		from: 20 mm @ 230 mm;
 		text: 'Payment status:');
 	add: (PDFTextElement new
 		font: self fontContent;
-		from: 30 mm @ 230 mm;
+		from: 30 mm @ 235 mm;
 		text: (self paymentStatus: user)).
 ]
 

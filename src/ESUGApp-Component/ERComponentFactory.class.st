@@ -126,11 +126,7 @@ ERComponentFactory >> createPaymentInfoTab: anAttendee withContent: aContent [
 
 	^ ERContentTab new
 		contentTab: (self createPaymentInformationComponent: anAttendee);
-		previousContentTab:
-			'<br><p>Pay by transfer or pay/card. Pay in euros. Credit card implies additional fee of '
-				, self creditCardCommission asString, '%</p>
-                    <p><strong>IMPORTANT: Bank transfer should mention "ESUG" & the registrant name(s) as comment (e.g "Esug John Johnson")</strong></p>
-                    <p>Use the inter-country IBAN / BIC data (may need to ask your bank to process he payment)</p>';
+		previousContentTab: self paymentInformationDescription;
 		attendee: anAttendee;
 		tabId: 'paymentInformationForm';
 		tabName: 'Payment';
@@ -146,11 +142,7 @@ ERComponentFactory >> createPaymentInfoTab: anAttendee withContent: aContent and
 
 	^ ERContentTab new
 		contentTab: (self createPaymentInformationComponent: anAttendee);
-		previousContentTab:
-			'<br><p>Pay by transfer or pay/card. Pay in euros. Credit card implies additional fee of '
-				, self creditCardCommission asString, '%</p>
-                    <p><strong>IMPORTANT: Bank transfer should mention "ESUG" & the registrant name(s) as comment (e.g "Esug John Johnson")</strong></p>
-                    <p>Use the inter-country IBAN / BIC data (may need to ask your bank to process he payment)</p>';
+		previousContentTab: self paymentInformationDescription;
 		attendee: anAttendee;
 		tabId: 'paymentInformationForm';
 		tabName: 'Payment';
@@ -185,4 +177,18 @@ ERComponentFactory >> createRegConferenceInformationComponent: anAttendee [
 ERComponentFactory >> creditCardCommission [
 
 	^ self conference fee creditCardCommissionPercentage * 100
+]
+
+{ #category : #factoryFormMethods }
+ERComponentFactory >> paymentInformationDescription [
+
+	self creditCardCommission isZero 
+		ifTrue: [ '<br><p>Pay by transfer or by card. Pay in euros.</p>
+      <p><strong>IMPORTANT: Bank transfer should mention "ESUG" & the registrant name(s) as comment (e.g "Esug John Johnson")</strong></p>
+      <p>Use the inter-country IBAN / BIC data (may need to ask your bank to process he payment)</p>' ].
+	
+	^ '<br><p>Pay by transfer or by card. Pay in euros. Credit card implies additional fee of '
+	  , self creditCardCommission asString , '%</p>
+      <p><strong>IMPORTANT: Bank transfer should mention "ESUG" & the registrant name(s) as comment (e.g "Esug John Johnson")</strong></p>
+      <p>Use the inter-country IBAN / BIC data (may need to ask your bank to process he payment)</p>'
 ]
