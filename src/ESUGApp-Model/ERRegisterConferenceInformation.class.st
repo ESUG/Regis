@@ -212,8 +212,8 @@ ERRegisterConferenceInformation >> descriptionFoodPreferenceOfExtraPerson [
 
 { #category : #'magrittes-descriptions' }
 ERRegisterConferenceInformation >> descriptionFriday [
-"	<magritteDescription>
-"	| tmp2 |
+	<magritteDescription>
+	| tmp2 |
 	tmp2 := MABooleanDescription new.
 	tmp2 
 		checkboxLabel: 'Friday';
@@ -248,7 +248,7 @@ ERRegisterConferenceInformation >> descriptionGender [
 
 { #category : #'magrittes-descriptions' }
 ERRegisterConferenceInformation >> descriptionMonday [
-	<magritteDescription>
+"	<magritteDescription>"
 	| tmp2 |
 	tmp2 := MABooleanDescription new.
 	tmp2 
