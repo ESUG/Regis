@@ -68,7 +68,7 @@ BaselineOfESUGApp >> setUpDependencies: spec [
 	spec baseline: 'Parasol' with: [ 
 		spec
 			loads: 'default';
-			repository: 'github://SeasideSt/Parasol:master/repository' ].
+			repository: 'github://ESUG/Parasol:Pharo14/repository' ].
 	"use default not to load Seaside again"
 
 	spec baseline: 'PSTableSeaside' with: [ spec repository: 'github://ESUG/PSTableSeaside:master/src' ].
