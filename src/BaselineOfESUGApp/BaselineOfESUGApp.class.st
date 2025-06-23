@@ -49,7 +49,7 @@ BaselineOfESUGApp >> setUpDependencies: spec [
 	spec baseline: 'MaterialDesignLite' with: [ 
 		spec
 			loads: 'all';
-			repository: 'github://DuneSt/MaterialDesignLite:v2.x.x/src' ].
+			repository: 'github://ESUG/MaterialDesignLite:Pharo14/src' ].
 
 	spec baseline: 'DatabaseEsug' with: [ spec repository: 'github://ESUG/DatabaseEsug:master/src' ].
 	"loaded in P10. Not a single test! Unbelievable"
